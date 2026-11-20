@@ -61,20 +61,23 @@ public final class NerithMcSystems extends JavaPlugin implements Listener, Comma
         }
     }
 
-    // ---------- 2) Kill / die titles ----------
+    // ---------- 2) Kill / die titles (title + subtitle) ----------
     @EventHandler
     public void onDeath(PlayerDeathEvent e) {
         Player victim = e.getEntity();
         Player killer = victim.getKiller();
         if (killer == null || killer.equals(victim)) return;
 
+        String killTitle = getConfig().getString("kill-title", "&a&lKILL");
+        String dieTitle = getConfig().getString("die-title", "&c&lYOU DIED");
+
         String killText = getConfig().getString("kill-message", "&aYou Killed %Player%")
                 .replace("%Player%", victim.getName());
-        String dieText = getConfig().getString("die-message", "&cYou died")
+        String dieText = getConfig().getString("die-message", "&cYou were killed by %Player%")
                 .replace("%Player%", killer.getName());
 
-        showTitle(killer, color(killText), Component.empty());
-        showTitle(victim, color(dieText), Component.empty());
+        showTitle(killer, color(killTitle), color(killText));
+        showTitle(victim, color(dieTitle), color(dieText));
     }
 
     // ---------- 5) Cooldowns ----------
@@ -97,7 +100,7 @@ public final class NerithMcSystems extends JavaPlugin implements Listener, Comma
         if (p.hasPermission("nerithmcsystems.bypass")) return;
         if (!pass(chatLast, p.getUniqueId())) {
             e.setCancelled(true);
-            p.sendMessage(color(getConfig().getString("chat-cooldown-message", "&cWait")
+            p.sendMessage(color(getConfig().getString("chat-cooldown-message", "&cPlease wait")
                     .replace("%Seconds%", seconds())));
         }
     }
@@ -108,7 +111,7 @@ public final class NerithMcSystems extends JavaPlugin implements Listener, Comma
         if (p.hasPermission("nerithmcsystems.bypass")) return;
         if (!pass(cmdLast, p.getUniqueId())) {
             e.setCancelled(true);
-            p.sendMessage(color(getConfig().getString("command-cooldown-message", "&cWait")
+            p.sendMessage(color(getConfig().getString("command-cooldown-message", "&cPlease wait")
                     .replace("%Seconds%", seconds())));
         }
     }
