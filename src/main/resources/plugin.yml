@@ -1,0 +1,27 @@
+name: NerithMcSystems
+version: 1.0.0
+main: com.nerithmc.systems.NerithMcSystems
+api-version: '1.21'
+description: Damage cancel, kill/die titles, announcements, cooldowns, cobweb fix.
+
+commands:
+  ifplayerkill:
+    description: Set the title shown to the killer
+    usage: /ifplayerkill <message>
+    permission: nerithmcsystems.admin
+  ifplayerdie:
+    description: Set the title shown to the player who died
+    usage: /ifplayerdie <message>
+    permission: nerithmcsystems.admin
+  title:
+    description: Send an announcement title to everyone
+    usage: /title <message>
+    aliases: [announce]
+    permission: nerithmcsystems.admin
+
+permissions:
+  nerithmcsystems.admin:
+    default: op
+  nerithmcsystems.bypass:
+    description: Ignore chat and command cooldowns
+    default: false
