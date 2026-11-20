@@ -1,0 +1,12 @@
+cooldown-seconds: 3
+
+kill-message: "&aYou Killed &f%Player%"
+die-message: "&cYou were killed by &f%Player%"
+
+chat-cooldown-message: "&cانتظر %Seconds% ثوانٍ قبل أن تكتب في الشات مرة أخرى!"
+command-cooldown-message: "&cانتظر %Seconds% ثوانٍ قبل استخدام أمر آخر!"
+
+cobweb-fix:
+  # Raises the server's "moved wrongly" threshold so entering cobwebs doesn't rubber-band you.
+  # Default in Spigot is 0.0625. Set to 0 to disable.
+  moved-wrongly-threshold: 2.0
