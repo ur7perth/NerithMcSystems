@@ -1,5 +1,8 @@
 cooldown-seconds: 3
 
+kill-title: "&a&lKILL"
+die-title: "&c&lYOU DIED"
+
 kill-message: "&aYou Killed &f%Player%"
 die-message: "&cYou were killed by &f%Player%"
 
