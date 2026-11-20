@@ -3,8 +3,8 @@ cooldown-seconds: 3
 kill-message: "&aYou Killed &f%Player%"
 die-message: "&cYou were killed by &f%Player%"
 
-chat-cooldown-message: "&cانتظر %Seconds% ثوانٍ قبل أن تكتب في الشات مرة أخرى!"
-command-cooldown-message: "&cانتظر %Seconds% ثوانٍ قبل استخدام أمر آخر!"
+chat-cooldown-message: "&cPlease wait %Seconds% seconds before chatting again!"
+command-cooldown-message: "&cPlease wait %Seconds% seconds before using another command!"
 
 cobweb-fix:
   # Raises the server's "moved wrongly" threshold so entering cobwebs doesn't rubber-band you.
